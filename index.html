@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">Timetable Planner</h1>
+        <div class="controls">
+            <div class="day-filter-container">
+                <div class="day-select">
+                    <label for="daySelect">Select Day:</label>
+                    <select id="daySelect">
+                        <option value="0">Sunday</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                    </select>
+                </div>
+                <div class="filter-sort">
+                    <input type="text" id="filterTask" placeholder="Filter Tasks">
+                    <div>
+                        <button id="sortTimeBtn">Sort by Time</button>
+                        <button id="sortTaskBtn">Sort by Task</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time (HH:MM)</th>
+                    <th>Task</th>
+                    <th>Alarm</th>
+                    <th>Completed</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="taskTableBody">
+            </tbody>
+        </table>
+        <div class="actions">
+            <button id="addRowBtn"><i class="fas fa-plus"></i> Add Row</button>
+            <button id="saveBtn"><i class="fas fa-save"></i> Save</button>
+            <button id="loadDayBtn"><i class="fas fa-calendar-day"></i> Load Day</button>
+            <button id="clearBtn"><i class="fas fa-trash"></i> Clear Day</button>
+            <button id="clearAllBtn"><i class="fas fa-trash-alt"></i> Clear All</button>
+            <button id="exportBtn"><i class="fas fa-file-export"></i> Export</button>
+            <label for="importBtn" class="import-button"><i class="fas fa-file-import"></i> Import</label>
+            <input type="file" id="importBtn" style="display: none;" accept=".json">
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
